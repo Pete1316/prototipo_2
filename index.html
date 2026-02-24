@@ -114,7 +114,7 @@ function crearTabla(id, columnas, filas){
   <div class="box">
     <div class="header-box">
       <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>${getSensorName(id)}</h5>
-      <div class="d-flex">
+      <div class="d-flex  align-items-end gap-2">
         <span id="${id}Status" class="status me-3">--</span>
         <span id="${id}Value" class="value">--</span>
       </div>
@@ -237,6 +237,8 @@ function actualizarTabla(valor, id){
     if (!isNaN(valor) && valor >= min && valor < max) {
       f.classList.add("highlight");
       status.textContent = f.cells[1].textContent;
+      status.style.marginBottom = "8px";
+      value.style.marginTop = "5px";
       status.className = "status";
       
       // Colores específicos por estado
